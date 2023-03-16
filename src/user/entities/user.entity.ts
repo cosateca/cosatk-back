@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name:'User'})
@@ -6,7 +7,7 @@ export class User {
     idUsers:number;
 
     @Column()
-    // added_on:Date;
+     added_on:Date;
 
     @Column()
     first_name:string;

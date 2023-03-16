@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Category } from "src/category/entities/category.entity";
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm"
 

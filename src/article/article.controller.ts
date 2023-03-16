@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Controller, Get, Post, Body, Patch, Param, Delete, Res, ParseIntPipe, HttpStatus, Put } from '@nestjs/common';
 import { ArticlesService } from './article.service';
 import { CreateArticleDto } from './dto/create-article.dto';

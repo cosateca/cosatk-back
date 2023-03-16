@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { ArticlesService } from './article.service';
 import { ArticleController } from './article.controller';
