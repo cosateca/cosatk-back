@@ -62,6 +62,8 @@ export class Article {
     Category_idCategory:number; 
     @Column()
     categoryIdCategory:number 
+    // @Column()
+    // categoryIdCategory:number
 
     @ManyToOne(()=>Category, category =>category.articles)
     category:Category;
