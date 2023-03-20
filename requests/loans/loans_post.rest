@@ -3,8 +3,8 @@ content-type: application/json
 
 {
     "status":true,
-    "fee":5,
-    "deposit":5,
+    "fee":55,
+    "deposit":55,
     "checked_out":"2001-12-25 00:00:00.000",
     "checked_in":"2001-12-24 00:00:00.000",
     "article":1,
