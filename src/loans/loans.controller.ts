@@ -65,7 +65,19 @@ export class LoansController {
   async getLoanWithStatusTrue(@Res()res:any, @Param('status') status: boolean) {
     const loan = await this.loansService.getLoanWithStatusTrue(status)
     return res.status(HttpStatus.OK).json(loan); 
+  
   }
+
+  
+  @Get('/checked_out/:checked_out')
+  async getLoanWithCheckedOutDateExpired(@Res()res:any, @Param('status') checked_out: Date) {
+    const loan = await this.loansService.getLoanWithCheckedOutDateExpired(checked_out)
+    return res.status(HttpStatus.OK).json(loan); 
+  
+  }
+
+
+  
 
 
   

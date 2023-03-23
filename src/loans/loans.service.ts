@@ -136,6 +136,26 @@ async getLoanWithStatusTrue(status: boolean): Promise<Loan[] | HttpException> {
   return LoanWithStatusTrue
 }
 
+async getLoanWithCheckedOutDateExpired(checked_out: Date): Promise<Loan[] | HttpException> {
+  const loanfound = await this.loanRepository.find({
+    where:{
+      checked_out
+    },
+  })
+  let currentTime = new Date();
+  if (currentTime < checked_out ) {
+      return loanfound }
+      
+   if(!loanfound){
+    return new HttpException('no loans with cheched out date ', HttpStatus.NOT_FOUND)
+    
+    
+   }
+ 
+  
+  // }
+  return loanfound
+}
 
 }
 
