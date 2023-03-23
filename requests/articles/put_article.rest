@@ -6,5 +6,5 @@ content-type: application/json
     "name":"Martillo",
     "shown_on_website":false,
     "loan_fee":8,
-    "loan_period":7
+    "loan_period":7,
   }

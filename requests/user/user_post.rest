@@ -2,17 +2,17 @@ POST http://localhost:3000/api/v1/user  HTTP/1.1
 content-type: application/json
 
   {
-    "first_name": "manu",
-    "last_name": "asdasd",
+    "first_name": "piero",
+    "last_name": "asrersd",
     "membership": "YP1",
-    "email": "jo55ad@gmail.com",
+    "email": "jo55aefrfdd@gmail.com",
     "subscriber": false,
-    "telephone": 23223222,
+    "telephone": 23223232,
     "address": "vic",
     "city": "barcelona",
     "how_meet_us": null,
-    "dni": "T1232404T",
-    "birth_date": "1980-12-25",
+    "dni": "T1242404T",
+    "birth_date": "1981-12-25",
     "role": "admin",
-    "password": "1453123"
+    "password": "144323123"
   }
