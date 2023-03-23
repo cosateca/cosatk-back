@@ -119,10 +119,24 @@ async getLoanByArticleId(articleIdArticle: number ): Promise<Loan | HttpExceptio
     },
   })
   if(!LoanFound){
-    return new HttpException('User not found', HttpStatus.NOT_FOUND)
+    return new HttpException('loan not found', HttpStatus.NOT_FOUND)
   }
   return LoanFound
 } 
+
+async getLoanWithStatusTrue(status: boolean): Promise<Loan[] | HttpException> {
+  const LoanWithStatusTrue = await this.loanRepository.find({
+    where:{
+      status
+    },
+  })
+  if(!LoanWithStatusTrue){
+    return new HttpException('no loans found', HttpStatus.NOT_FOUND)
+  }
+  return LoanWithStatusTrue
+}
+
+
 }
 
 //   update(id: number, updateLoanDto: UpdateLoanDto) {
