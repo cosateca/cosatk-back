@@ -136,34 +136,21 @@ async getLoanWithStatusTrue(status: boolean): Promise<Loan[] | HttpException> {
   return LoanWithStatusTrue
 }
 
-async getLoanWithCheckedOutDateExpired(checked_out: Date): Promise<Loan[] | HttpException> {
-  const loanfound = await this.loanRepository.find({
-    where:{
-      checked_out
-    },
-  })
-  let currentTime = new Date();
-  if (currentTime < checked_out ) {
-      return loanfound }
-      
-   if(!loanfound){
-    return new HttpException('no loans with cheched out date ', HttpStatus.NOT_FOUND)
-    
-    
-   }
- 
-  
-  // }
-  return loanfound
+async getLoansWithCheckedOutExpired(): Promise<Loan[]> {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const todayIsoString = today.toISOString();
+
+  const query = await this.loanRepository.createQueryBuilder('loan')
+    .where('loan.checked_out < :today', { today: todayIsoString })
+    .getMany();
+
+  return query;
+}
 }
 
-}
 
-//   update(id: number, updateLoanDto: UpdateLoanDto) {
-//     return `This action updates a #${id} loan`;
-//   }
 
-//   remove(id: number) {
-//     return `This action removes a #${id} loan`;
-//   }
+
+
 

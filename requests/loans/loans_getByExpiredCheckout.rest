@@ -1,1 +1,1 @@
-GET http://localhost:3000/api/v1/loans/checked_out/2023-03-27T10:00:00.000Z
+GET http://localhost:3000/api/v1/loans/checked_out HTTP/1.1
