@@ -69,7 +69,7 @@ async getArticleByName(name:string): Promise<Article[] | HttpException> {
       },
     })
     if(!articleFound){
-      return new HttpException('Article no found', HttpStatus.NOT_FOUND)
+      return new HttpException('Article not found', HttpStatus.NOT_FOUND)
     }
     return articleFound
   } 
@@ -81,7 +81,7 @@ async getArticleByName(name:string): Promise<Article[] | HttpException> {
       },
     })
     if(!articleFound){
-      return new  HttpException('User not found', HttpStatus.NOT_FOUND)
+      return new  HttpException('Article not found', HttpStatus.NOT_FOUND)
     }
     const updateArticle = Object.assign(articleFound, article)
     return this.articleRepository.save(updateArticle)
@@ -94,7 +94,7 @@ async getArticleByName(name:string): Promise<Article[] | HttpException> {
       },
     })
     if(!articleFound){
-      return new  HttpException('User not found', HttpStatus.NOT_FOUND)
+      return new  HttpException('Article not found', HttpStatus.NOT_FOUND)
     }
 
     articleFound.is_on_loan = !articleFound.is_on_loan;
@@ -106,7 +106,7 @@ async getArticleByName(name:string): Promise<Article[] | HttpException> {
     const result = await this.articleRepository.delete({idArticle});
 
     if(result.affected === 0){
-      return new HttpException('user not found', HttpStatus.NOT_FOUND)
+      return new HttpException('article not found', HttpStatus.NOT_FOUND)
     }
     return result
   }
