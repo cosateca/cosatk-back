@@ -6,9 +6,9 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy  } from "./strategies/jwt.strategy";
 import { JwtModule } from "@nestjs/jwt";
 import { jwtConstants } from './constants/jwt.constants';
-import { UserModule } from 'src/user/user.module';
+import { UserModule } from '../user/user.module';
 import { RolesGuard } from './guards/roles.guard';
-import { User } from 'src/user/entities/user.entity';
+import { User } from '../user/entities/user.entity';
 
 @Module({
   imports:[TypeOrmModule.forFeature([User]),PassportModule,
@@ -18,6 +18,7 @@ import { User } from 'src/user/entities/user.entity';
     }),
     UserModule],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy, RolesGuard]
+  providers: [AuthService, JwtStrategy, RolesGuard],
+  exports:[AuthService]
 })
 export class AuthModule {}

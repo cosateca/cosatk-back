@@ -1,9 +1,9 @@
-import { Category } from 'src/category/entities/category.entity';
-import { Article } from 'src/article/entities/article.entity';
+import { Category } from '../category/entities/category.entity';
+import { Article } from '../article/entities/article.entity';
 import { TypeOrmModuleOptions } from "@nestjs/typeorm";
-import { User } from "src/user/entities/user.entity";
-import { Loan } from "src/loans/entities/loan.entity";
-import { Auth } from 'src/auth/entities/auth.entity';
+import { User } from "../user/entities/user.entity";
+import { Loan } from "../loans/entities/loan.entity";
+import { Auth } from '../auth/entities/auth.entity';
 
 require('dotenv').config();
 

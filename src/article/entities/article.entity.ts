@@ -1,5 +1,5 @@
-import { Category } from "src/category/entities/category.entity";
-import { Loan } from "src/loans/entities/loan.entity";
+import { Category } from "../../category/entities/category.entity";
+import { Loan } from "../../loans/entities/loan.entity";
 import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity({name:"Article"})
