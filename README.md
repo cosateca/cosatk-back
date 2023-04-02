@@ -89,7 +89,8 @@ $ npm run test:cov
 ```
 
 ## Running the app
-## Running the app
+
+## Running the app## Running the app
 
 ```bash
 # development
